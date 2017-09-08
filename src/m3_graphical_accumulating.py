@@ -178,7 +178,7 @@ def draw_lines(n, point, window):
       :type window: rg.RoseWindow
     """
     # ------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # Done: 3. Implement and test this function.
     #          Tests have been written for you (above).
     #
     # CONSIDER using the ACCUMULATOR IN GRAPHICS pattern,
@@ -191,8 +191,20 @@ def draw_lines(n, point, window):
     #          ** FIRST DO A CONCRETE EXAMPLE BY HAND! **
     ####################################################################
     # ------------------------------------------------------------------
+    start = point
+    end = rg.Point(0, 0)
+    end.x = start.x + 100
+    end.y = start.y + 100
+    line_1 = rg.Line(start, end)
+    line_1.attach_to(window)
+    for k in range(n-1):
+        step = 200/(n-1)
+        new_end = end
+        new_end.y = end.y - step
+        line_new = rg.Line(start, new_end)
+        line_new.attach_to(window)
 
-
+    window.render()
 # ----------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
 # ----------------------------------------------------------------------
