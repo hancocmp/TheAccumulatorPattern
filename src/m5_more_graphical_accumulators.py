@@ -382,7 +382,11 @@ def draw_lines_from_rectangles(rectangle1, rectangle2, n, window):
             color = R2_color
         else:
             color = R1_color
- 
+
+        line_new.color = color
+        line_new.thickness = 5
+        line_new.attach_to(window)
+    window.render()
 # ----------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
 # ----------------------------------------------------------------------
